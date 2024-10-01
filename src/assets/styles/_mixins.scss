@@ -1,0 +1,35 @@
+@mixin limit-text($limit) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $limit;
+    -webkit-box-orient: vertical;
+}
+
+@mixin hover-scale($size) {
+    transition: all 0.4s ease;
+    &:hover {
+        transform: scale($size);
+    }
+}
+
+// USE
+.scale-small {
+    @include hover-scale(1.01);
+}
+
+.scale-medium {
+    @include hover-scale(1.05);
+}
+
+.limit-text-1 {
+    @include limit-text(1);
+}
+
+.limit-text-2 {
+    @include limit-text(2);
+}
+
+.limit-text-3 {
+    @include limit-text(3);
+}
